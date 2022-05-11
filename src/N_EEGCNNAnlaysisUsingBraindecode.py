@@ -46,6 +46,8 @@ for temp_subNum in range(1, 3):
     raw_labels = io.loadmat('sub_' + str(temp_subNum) + 'Day2_200508_ylabel.mat')
     FeatVect = raw_data['rawData']
     # 3-dimentiona array = [trials x channels x time-series]
+    Timesegment = 10
+    Fs = 200
     FeatVect = FeatVect[:, :, 0:(Timesegment*Fs)]
     y_labels = raw_labels['y_label']
     del raw_data, raw_labels
